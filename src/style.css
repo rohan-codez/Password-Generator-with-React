@@ -150,6 +150,7 @@ body {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+    justify-content: center;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
@@ -258,9 +259,9 @@ input[type="checkbox"]:checked::before {
         -webkit-box-pack: center;
         -ms-flex-pack: center;
         justify-content: center;
-        -webkit-box-align: start;
-        -ms-flex-align: start;
-        align-items: start;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
     }
 }
 
@@ -283,12 +284,12 @@ input[type="checkbox"]:checked::before {
     }
 
     .range-container {
-        width: 50vmin;
+        width: 90vw;
     }
 
     .range-container label {
         margin-left: 5px;
-        width: 50vw;
+        width: 90vw;
     }
 
     .password-container button {
