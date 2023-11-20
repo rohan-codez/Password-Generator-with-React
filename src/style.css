@@ -1,6 +1,14 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 * {
     margin: 0;
     padding: 0;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     font-family: General Sans;
     -webkit-tap-highlight-color: transparent;
@@ -14,8 +22,9 @@ html {
 
 body {
     background: hsla(205, 46%, 30%, 1);
+    background: -webkit-gradient(linear, left top, right top, from(hsla(205, 46%, 30%, 1)), to(hsla(260, 29%, 36%, 1)));
+    background: -o-linear-gradient(left, hsla(205, 46%, 30%, 1) 0%, hsla(260, 29%, 36%, 1) 100%);
     background: linear-gradient(90deg, hsla(205, 46%, 30%, 1) 0%, hsla(260, 29%, 36%, 1) 100%);
-    background: -moz-linear-gradient(90deg, hsla(205, 46%, 30%, 1) 0%, hsla(260, 29%, 36%, 1) 100%);
     background: -webkit-linear-gradient(90deg, hsla(205, 46%, 30%, 1) 0%, hsla(260, 29%, 36%, 1) 100%);
     filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#295270", endColorstr="#524175", GradientType=1);
 }
@@ -24,6 +33,8 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
+    -webkit-transform: translate(-50%, -55%);
+    -ms-transform: translate(-50%, -55%);
     transform: translate(-50%, -55%);
 }
 
@@ -32,12 +43,17 @@ body {
     font-size: 32px;
     margin-left: 6px;
     cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
     user-select: none;
     background-color: rgba(0, 0, 0, 0.3);
     border: 3px solid white;
     border-radius: 50px;
     padding: 5px 25px;
     margin-bottom: 10px;
+    -webkit-transition: scale 0.1s ease-in;
+    -o-transition: scale 0.1s ease-in;
     transition: scale 0.1s ease-in;
 }
 
@@ -48,15 +64,28 @@ body {
 .container {
     background-color: rgba(0, 0, 0, 0.3);
     border-radius: 5px;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
     height: fit-content;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
     padding: 6vmin 5vmin;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
 }
 
 .password-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     margin-bottom: 4vh;
 }
@@ -82,9 +111,17 @@ body {
     text-align: center;
     cursor: pointer;
     border-left: 1px solid white;
+    -webkit-transition: color 0.5s ease-in-out, background-color 0.1s ease-in-out;
+    -o-transition: color 0.5s ease-in-out, background-color 0.1s ease-in-out;
     transition: color 0.5s ease-in-out, background-color 0.1s ease-in-out;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
 }
 
@@ -94,15 +131,27 @@ body {
 }
 
 .options-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     gap: 2vmin;
 }
 
 .range-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     width: 38vmin;
 }
@@ -128,6 +177,9 @@ input[type="range"] {
 label {
     color: white;
     margin-left: 0.3vw;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
     user-select: none;
 }
 
@@ -136,10 +188,13 @@ input[type='checkbox'] {
     height: 22px;
     width: 22px;
     outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
     appearance: none;
     margin: 0;
     border: 2px solid white;
     border-radius: 5px;
+    display: -ms-grid;
     display: grid;
     place-content: center;
 }
@@ -148,12 +203,21 @@ input[type="checkbox"]::before {
     content: "";
     width: 0.75em;
     height: 0.75em;
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
     transform: scale(0);
+    -webkit-transition: 120ms -webkit-transform ease-in-out;
+    transition: 120ms -webkit-transform ease-in-out;
+    -o-transition: 120ms transform ease-in-out;
     transition: 120ms transform ease-in-out;
+    transition: 120ms transform ease-in-out, 120ms -webkit-transform ease-in-out;
+    -webkit-box-shadow: inset 1em 1em white;
     box-shadow: inset 1em 1em white;
 }
 
 input[type="checkbox"]:checked::before {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
     transform: scale(1);
 }
 
@@ -161,9 +225,17 @@ input[type="checkbox"]:checked::before {
 .charallowed-container,
 .lowerallowed-container,
 .upperallowed-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
 }
 
@@ -179,16 +251,30 @@ input[type="checkbox"]:checked::before {
 
 @media screen and (max-width: 1200px) {
     .options-container {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
+        -webkit-box-align: start;
+        -ms-flex-align: start;
         align-items: start;
     }
 }
 
 @media screen and (max-width: 450px) {
     .options-container {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
+        -webkit-box-align: start;
+        -ms-flex-align: start;
         align-items: start;
     }
 
